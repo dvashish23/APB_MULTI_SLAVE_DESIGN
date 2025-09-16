@@ -28,7 +28,8 @@
 
    🔹 Ready Signal (PREADY)                               
       --> Each slave can insert a programmable wait state.                           
-      --> PREADY can be delayed 1 to 16 cycles before transaction completion.                          
+      --> PREADY can be delayed 1 to 16 cycles before transaction completion.    
+      --> Configurable PREADY delay per slave.
    
    🔹 Transaction Rules                                   
       --> At once only one transaction (either read or write) can occur.                                        
@@ -46,10 +47,31 @@
       --> PSLVERR validity condition:                                     
           PSEL & PENABLE & PREADY must be HIGH simultaneously.                              
 
-  🔹 Bus Parameters                                  
+  🔹 Reset Behavior
+     --> Define what happens on reset (PRDATA=0, PSLVERR=0).
+     --> This is standard in most IP specs.
+
+     
+  🔹 Design Parameters                                  
      --> Address width: 8 bits                                 
      --> Data width: 32 bits                          
-     --> PREADY delay: 1–16 cycles                               
+     --> Delay: 1–16 cycles                               
+     --> Memory Depth: 256 bytes                                   
+     --> Boundary Address: 20 ranges
+
+  🔹 Signal Descriptions
+      --> A table of all important signals:                              
+            Signal	      Direction	            Width	              Description                                           
+            PCLK     --      Input    --         1     --        apb clk which will work approx 100 Mhz from clock controller                        
+            PRESETn  --      Input    --         1     --        Active Low Reset signal from master                          
+            PADDR	 --      Input	  --         8	   --        Address bus from master                                
+            PWDATA	 --      Input    --         32	   --        Write data bus from master                                 
+            PRDATA	 --      Output   --         32	   --        Read data bus from slave                                
+            PWRITE	 --      Input    --         1	   --        Write=1, Read=0                                          
+            PSEL	 --      Input	  --         1	   --        Slave select from master                                 
+            PENABLE	 --      Input    --         1	   --        Enable signal for access phase from master                       
+            PREADY	 --      Output   --         1	   --        Slave ready (wait state are inserted)                                
+            PSLVERR	 --      Output   --         1	   --        Slave error response                                              
     
 
     
