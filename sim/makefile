@@ -8,7 +8,7 @@
 #makefile for apb_slave_wrapper design for automation
 
 RTL = ../rtl/mod_n_cntr.v ../rtl/apb_slave.v ../rtl/apb_slave_wrap.v
-TB  = ../tb/apb_tb.sv
+TB  = ../tb/apb_master_tb.sv
 
 
 ifeq ($(TOOL),irun)
