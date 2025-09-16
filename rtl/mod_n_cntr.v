@@ -1,3 +1,10 @@
+//***************************************************************
+//
+// Author :- Saroj Ashish
+// Designation :- Design and Verification Engineer
+//
+//***************************************************************
+
 module mod_n_cntr #(parameter N=1)
                      (
                        input clk,
