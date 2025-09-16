@@ -1,3 +1,10 @@
+//***************************************************************
+//
+// Author :- Saroj Ashish
+// Designation :- Design and Verification Engineer
+//
+//***************************************************************
+
 module apb_slave_wrap #(parameter DATA_WDTH = 32, parameter ADDR_WDTH = 8)
                        (
                          input pclk, presetn,   // global clk and rst of apb
