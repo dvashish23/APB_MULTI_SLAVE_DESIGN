@@ -8,7 +8,7 @@
 parameter MEM_DEPTH = 256;
 parameter DELAY     = 0;
 
-module tb;
+module apb_master_tb;
 
 bit clk;
 bit rst;
@@ -101,5 +101,5 @@ initial begin
  $finish();
 end
 
-endmodule:tb
+endmodule:apb_master_tb
 
