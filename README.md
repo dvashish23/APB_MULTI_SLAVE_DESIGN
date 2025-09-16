@@ -1,0 +1,2 @@
+# APB_MULTI_SLAVE_DESIGN
+This project is compatible with AMBA APB (ADVANCE PERIPHERAL BUS).
