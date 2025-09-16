@@ -1,3 +1,10 @@
+//***************************************************************
+//
+// Author :- Saroj Ashish
+// Designation :- Design and Verification Engineer
+//
+//***************************************************************
+
 module apb_slave #(parameter DATA_WDTH = 8, parameter ADDR_WDTH = 8, parameter BOUND_ADDR = 100)
              ( input presetn, pclk, psel, penable, pwrite,
                input [ADDR_WDTH-1:0] paddr, 
